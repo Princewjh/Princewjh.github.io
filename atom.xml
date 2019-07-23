@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Real Life</title>
+  
+  <subtitle>技术博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2019-06-27T03:34:55.683Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>Princewjh</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>thymeleaf</title>
+    <link href="http://yoursite.com/2019/06/26/thymeleaf/"/>
+    <id>http://yoursite.com/2019/06/26/thymeleaf/</id>
+    <published>2019-06-26T04:59:52.000Z</published>
+    <updated>2019-06-27T03:34:55.683Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="thymeleaf基本语法"><a href="#thymeleaf基本语法" class="headerlink" title="thymeleaf基本语法"></a>thymeleaf基本语法</h1><h2 id="持续更新中。。。。"><a href="#持续更新中。。。。" class="headerlink" title="持续更新中。。。。"></a>持续更新中。。。。</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- thymeleaf模版  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">xmlns:th</span>=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">pre</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"$&#123;value1&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"$&#123;value2&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    colors:<span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span>=<span class="string">"$&#123;colors&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--循环--&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--/*--&gt;</span></span><br><span class="line">    th:each属性用于迭代循环，语法：th:each="obj,iterStat:$&#123;objList&#125;"</span><br><span class="line">    迭代对象可以是java.util.List,java.util.Map,数组等;</span><br><span class="line">    iterStat称作状态变量，属性有：</span><br><span class="line">        index:当前迭代对象的index（从0开始计算）</span><br><span class="line">        count: 当前迭代对象的index(从1开始计算)</span><br><span class="line">        size:被迭代对象的大小</span><br><span class="line">        current:当前迭代变量</span><br><span class="line">        even/odd:布尔值，当前循环是否是偶数/奇数（从0开始计算）</span><br><span class="line">        first:布尔值，当前循环是否是第一个</span><br><span class="line">        last:布尔值，当前循环是否是最后一个</span><br><span class="line">    <span class="comment">&lt;!--*/--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:each</span> = <span class="string">"color,colorStat : $&#123;colors&#125;"</span>&gt;</span></span><br><span class="line">        color:<span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span> = <span class="string">"'is '+ $&#123;colorStat.index&#125;+ $&#123;color&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--遍历map的key和value--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:each</span> = <span class="string">"item ,itemStat: $&#123;map&#125;"</span>&gt;</span></span><br><span class="line">        Number: <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span> = <span class="string">"$&#123;item.key&#125; + ', ' + 'Value: ' + $&#123;item.value&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--第二种遍历方式--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:each</span> = <span class="string">"key:$&#123;map.keySet()&#125;"</span>&gt;</span></span><br><span class="line">        Number: <span class="tag">&lt;<span class="name">span</span> <span class="attr">th:text</span> = <span class="string">"$&#123;key&#125; + ' ' + $&#123;map.get(key)&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:text</span>=<span class="string">"'User ' + $&#123;user.name&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--可以通过变量和方法访问(模版自动寻找)--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:text</span>=<span class="string">"'User  ' + $&#123;user.description&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:text</span>=<span class="string">"'User  ' + $&#123;user.getDescription()&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">&lt;!--定义局部变量--&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">tr</span> <span class="attr">th:with</span>=<span class="string">"title='nowcoder'"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">th:text</span>=<span class="string">"$&#123;title&#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">pre</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;thymeleaf基本语法&quot;&gt;&lt;a href=&quot;#thymeleaf基本语法&quot; class=&quot;headerlink&quot; title=&quot;thymeleaf基本语法&quot;&gt;&lt;/a&gt;thymeleaf基本语法&lt;/h1&gt;&lt;h2 id=&quot;持续更新中。。。。&quot;&gt;&lt;a href=&quot;#
+      
+    
+    </summary>
+    
+    
+      <category term="编程" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>wjh的博客之旅</title>
+    <link href="http://yoursite.com/2019/06/21/first/"/>
+    <id>http://yoursite.com/2019/06/21/first/</id>
+    <published>2019-06-21T13:57:10.000Z</published>
+    <updated>2019-06-25T05:32:46.474Z</updated>
+    
+    <content type="html"><![CDATA[<p>#第一条博客 开启博客之旅</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#第一条博客 开启博客之旅&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://yoursite.com/2019/06/21/hello-world/"/>
+    <id>http://yoursite.com/2019/06/21/hello-world/</id>
+    <published>2019-06-21T13:23:12.089Z</published>
+    <updated>2019-06-21T13:23:12.090Z</updated>
+    
+    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
