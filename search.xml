@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[const and pointer]]></title>
+    <url>%2F2019%2F07%2F30%2Fconst%2F</url>
+    <content type="text"><![CDATA[指针与const1.指向常量的指针(pointer to const)类似于常量引用，指向常量的指针不能用于改变其所指对象的值。要想存放常量对象的地址，只能使用指向常量的指针： 1234const double pi = 3.14; //pi为一个常量，它的值不能改变double *ptr = &amp;pi; //错误：ptr是一个普通指针const double *cptr = &amp;pi; //正确：cptr可以指向一个双精度常量*cptr = 42; //错误：不能给常量指针赋值 指向常量的指针没有规定其所指的对象必须是一个常量，所谓指向常量的指针仅仅要求不能通过该指针改变对象的值，而没有规定那个对象的值不能通过其他途径改变。 所谓指向常量的指针或引用，不过是指针或引用 “自以为是”罢了，它们觉得自己指向了常量，所以自觉的不去改变所指对象的值。 2.const指针指针是对象，因此允许把指针本身定义为常量。常量指针(const pointer)必须初始化，而且一旦初始化完成，则它的值(也就是存放在指针中的那个地址)就不能在改变了。把放在const关键字之前用以说明*指针是一个常量**，不变的值是指针本身的值而并非指向的那个值。 1234int errNumb = 0;int * const curErr = &amp;errNumb; //curErr将一直指向errNumbconst double pi = 3.1415926;const double *const pip = &amp;pi; //pip是一个指向常量对象的常量指针 多重声明应从右向左阅读 在此例中，curErr最近的符号是 const,意味着curErr本身是一个常量对象，对象的类型由声明符的其余部分确定。声明符下一个符号是*，意思是curErr是一个常量指针。最后 该声明语句的基本数据类型部分确定了常量指针指向的是一个int对象。 本文节选自c++ primer(第5版)]]></content>
+      <tags>
+        <tag>c++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[thymeleaf]]></title>
+    <url>%2F2019%2F06%2F26%2Fthymeleaf%2F</url>
+    <content type="text"><![CDATA[thymeleaf基本语法持续更新中。。。。12345678910111213141516171819202122232425262728293031323334353637383940414243444546&lt;!-- thymeleaf模版 --&gt;&lt;html xmlns:th="http://www.w3.org/1999/xhtml"&gt;&lt;body&gt;&lt;pre&gt; &lt;span th:text="$&#123;value1&#125;"&gt;&lt;/span&gt; &lt;span th:text="$&#123;value2&#125;"&gt;&lt;/span&gt; colors:&lt;span th:text="$&#123;colors&#125;"&gt;&lt;/span&gt; &lt;!--循环--&gt; &lt;!--/*--&gt; th:each属性用于迭代循环，语法：th:each="obj,iterStat:$&#123;objList&#125;" 迭代对象可以是java.util.List,java.util.Map,数组等; iterStat称作状态变量，属性有： index:当前迭代对象的index（从0开始计算） count: 当前迭代对象的index(从1开始计算) size:被迭代对象的大小 current:当前迭代变量 even/odd:布尔值，当前循环是否是偶数/奇数（从0开始计算） first:布尔值，当前循环是否是第一个 last:布尔值，当前循环是否是最后一个 &lt;!--*/--&gt; &lt;tr th:each = "color,colorStat : $&#123;colors&#125;"&gt; color:&lt;span th:text = "'is '+ $&#123;colorStat.index&#125;+ $&#123;color&#125;"&gt;&lt;/span&gt; &lt;/tr&gt; &lt;!--遍历map的key和value--&gt; &lt;tr th:each = "item ,itemStat: $&#123;map&#125;"&gt; Number: &lt;span th:text = "$&#123;item.key&#125; + ', ' + 'Value: ' + $&#123;item.value&#125;"&gt;&lt;/span&gt; &lt;/tr&gt; &lt;!--第二种遍历方式--&gt; &lt;tr th:each = "key:$&#123;map.keySet()&#125;"&gt; Number: &lt;span th:text = "$&#123;key&#125; + ' ' + $&#123;map.get(key)&#125;"&gt;&lt;/span&gt; &lt;/tr&gt; &lt;tr th:text="'User ' + $&#123;user.name&#125;"&gt;&lt;/tr&gt; &lt;!--可以通过变量和方法访问(模版自动寻找)--&gt; &lt;tr th:text="'User ' + $&#123;user.description&#125;"&gt;&lt;/tr&gt; &lt;tr th:text="'User ' + $&#123;user.getDescription()&#125;"&gt;&lt;/tr&gt; &lt;!--定义局部变量--&gt; &lt;tr th:with="title='nowcoder'"&gt; &lt;p th:text="$&#123;title&#125;"&gt;&lt;/p&gt; &lt;/tr&gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;]]></content>
+      <tags>
+        <tag>编程</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[wjh的博客之旅]]></title>
+    <url>%2F2019%2F06%2F21%2Ffirst%2F</url>
+    <content type="text"><![CDATA[#第一条博客 开启博客之旅]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[Hello World]]></title>
+    <url>%2F2019%2F06%2F21%2Fhello-world%2F</url>
+    <content type="text"><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick Start&lt;! – more –&gt; Create a new post1$ hexo new "My New Post" More info: Writing Run server1$ hexo server More info: Server Generate static files1$ hexo generate More info: Generating Deploy to remote sites1$ hexo deploy More info: Deployment]]></content>
+  </entry>
+</search>
