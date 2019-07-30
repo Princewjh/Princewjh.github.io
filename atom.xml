@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2019-06-27T03:34:55.683Z</updated>
+  <updated>2019-07-30T09:27:29.771Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>const</title>
+    <link href="http://yoursite.com/2019/07/30/const/"/>
+    <id>http://yoursite.com/2019/07/30/const/</id>
+    <published>2019-07-30T09:26:49.000Z</published>
+    <updated>2019-07-30T09:27:29.771Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="指针与const"><a href="#指针与const" class="headerlink" title="指针与const"></a>指针与const</h1>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;指针与const&quot;&gt;&lt;a href=&quot;#指针与const&quot; class=&quot;headerlink&quot; title=&quot;指针与const&quot;&gt;&lt;/a&gt;指针与const&lt;/h1&gt;
+      
+    
+    </summary>
+    
+    
+      <category term="c++" scheme="http://yoursite.com/tags/c/"/>
+    
+  </entry>
   
   <entry>
     <title>thymeleaf</title>
